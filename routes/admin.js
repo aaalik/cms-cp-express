@@ -10,7 +10,6 @@ router.get('/', (req, res, next) => {
 
 router.get('/alik', async(req, res) => {
     const getStatus = await db.testConnect();
-    console.log(getStatus);
     res.send( getStatus);
 });
 
@@ -62,6 +61,23 @@ router.get('/updatePassword', (req, res, next) => {
 
 router.get('/login', (req, res, next) => {
     res.render('login', { title: 'Login Admin' });
+});
+
+/*
+* POST method below
+*/
+router.post('/createUser', async(req,res) =>{
+    const {email, hashedPassword, name, status, level} = req.body;
+    const tableName = 'user';
+    const tableValue = {
+        name: name, 
+        email: email, 
+        password: hashedPassword,
+        status: 1,
+        level: 1
+    };
+    const result = await db.insertRow(tableName, tableValue, res);
+    res.redirect('/admin/users');
 });
 
 module.exports = router;
