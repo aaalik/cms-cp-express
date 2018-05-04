@@ -84,23 +84,31 @@
                             {{#each rows}}
                             <tr>
                                 <td width="130">
-                                    <a href="/admin/users/detailUser">
+                                    <a href="/admin/users/{{user_id}}">
                                         <button class="btn btn-block btn-default btn-sm">
                                             <i class="fa fa-eye"></i> View Detail
                                         </button>
                                     </a>
                                 </td>
                                 <td class="text-center">
+                                    {{name}}
+                                </td>
+                                <td class="text-center">
                                     {{email}}
                                 </td>
                                 <td class="text-center">
-                                    anothermalik@gmail.com
+                                    {{#if level}}
+                                        Admin
+                                    {{else}}
+                                        Super Admin
+                                    {{/if}}
                                 </td>
                                 <td class="text-center">
-                                    Super Admin
-                                </td>
-                                <td class="text-center">
-                                    Aktif
+                                    {{#if status}}
+                                        Aktif
+                                    {{else}}
+                                        Tidak Aktif
+                                    {{/if}}
                                 </td>
                             </tr>
                             {{/each}}

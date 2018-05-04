@@ -30,7 +30,7 @@
 							<div class="box-header with-border">
 								<h3 class="box-title">Add User Form Information</h3>
 							</div>
-							<form method="post" action="<?php echo base_url()?>admin/addUserf">							
+							<form method="post" action="/admin/createUser">							
 								<table class="table table-bordered">
 									<tbody>
 										<tr>
@@ -55,16 +55,6 @@
 											<th style="width:50px">CONFIRM PASSWORD</th>
 											<td>
 												<input type="password" class="form-control" name="password2" style="width:300px" value="" required>
-											</td>
-										</tr>
-										<tr>
-											<th style="width:50px">STATUS</th>
-											<td>
-												<select name="status" class="form-control" id="status" style="width:200px;text-align:center" required>
-													<option value="">Pilih Status User</option>
-													<option value="1" >Aktif</option>
-													<option value="0">Tidak Aktif</option>
-												</select>											
 											</td>
 										</tr>
 										<tr>
